@@ -1,7 +1,8 @@
 {
-  "name": "react-example",
+  "name": "skillbridge",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "homepage": "https://ais-pre-q7nuune6vkio6vf7mon47t-436417360731.asia-southeast1.run.app",
   "type": "module",
   "scripts": {
     "dev": "tsx server.ts",

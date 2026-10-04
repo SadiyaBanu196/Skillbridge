@@ -5,6 +5,12 @@
 
 ---
 
+## Live Demo
+
+[Open SkillBridge](https://ais-pre-q7nuune6vkio6vf7mon47t-436417360731.asia-southeast1.run.app)
+
+---
+
 ## 1. Project Overview
 **SkillBridge** is an AI-powered project learning and development platform engineered to help students and software learners build real-world applications while deeply understanding the concepts, architectural decisions, and code behind them.
 
