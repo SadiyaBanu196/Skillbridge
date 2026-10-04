@@ -1,7 +1,6 @@
 # SkillBridge — AI-Powered Project Learning and Development Platform
 
-> **Tagline:** *From Project Idea to Working Project — While Understanding What You Build.*  
-> **Prototype Context:** EDVC Venture Prototype & Full Stack Development (FSD) Lab Project.
+> **Tagline:** *From Project Idea to Working Project — While Understanding What You Build.*
 
 ---
 
