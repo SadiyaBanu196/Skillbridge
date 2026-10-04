@@ -105,22 +105,22 @@ export const ProjectWorkspacePage: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center p-4">
-        <Loader2 className="w-8 h-8 text-indigo-500 animate-spin mb-3" />
-        <p className="text-xs font-mono text-slate-400">Loading project workspace from SQLite...</p>
+      <div className="min-h-[calc(100vh-4rem)] bg-[#FCF9F5] flex flex-col items-center justify-center p-4">
+        <Loader2 className="w-8 h-8 text-[#5C4033] animate-spin mb-3" />
+        <p className="text-xs font-mono text-[#75675C]">Loading project workspace from SQLite...</p>
       </div>
     );
   }
 
   if (error || !project) {
     return (
-      <div className="max-w-2xl mx-auto my-16 p-8 rounded-2xl bg-slate-900 border border-slate-800 text-center">
-        <AlertCircle className="w-10 h-10 text-rose-500 mx-auto mb-3" />
-        <h2 className="text-lg font-bold text-white mb-2">Project Not Found</h2>
-        <p className="text-xs text-slate-400 mb-6">{error || 'This project could not be found or you do not have permission to view it.'}</p>
+      <div className="max-w-2xl mx-auto my-16 p-8 rounded-2xl bg-[#F5EFE6] border border-[#E8DCCB] text-center shadow-md">
+        <AlertCircle className="w-10 h-10 text-[#8E3E3E] mx-auto mb-3" />
+        <h2 className="text-lg font-bold text-[#3E3028] mb-2">Project Not Found</h2>
+        <p className="text-xs text-[#75675C] mb-6">{error || 'This project could not be found or you do not have permission to view it.'}</p>
         <Link
           to="/dashboard"
-          className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs rounded-lg transition-colors"
+          className="inline-flex items-center gap-2 px-4 py-2 bg-[#5C4033] hover:bg-[#4A3227] text-white font-semibold text-xs rounded-lg transition-colors shadow-sm"
         >
           <ChevronLeft className="w-4 h-4" />
           <span>Back to Dashboard</span>
@@ -133,13 +133,13 @@ export const ProjectWorkspacePage: React.FC = () => {
   const progressPct = project.stats?.percentage || 0;
 
   return (
-    <div className="min-h-[calc(100vh-4rem)] flex flex-col">
+    <div className="min-h-[calc(100vh-4rem)] bg-[#FCF9F5] flex flex-col">
       {/* Top Project Sub-Header Bar */}
-      <div className="bg-slate-900/90 border-b border-slate-800 px-4 sm:px-6 py-2.5 flex items-center justify-between sticky top-16 z-30 backdrop-blur-md">
+      <div className="bg-[#FCF9F5]/90 border-b border-[#E8DCCB] px-4 sm:px-6 py-2.5 flex items-center justify-between sticky top-16 z-30 backdrop-blur-md">
         <div className="flex items-center gap-3">
           <Link
             to="/dashboard"
-            className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+            className="p-1.5 rounded-lg text-[#75675C] hover:text-[#3E3028] hover:bg-[#F5EFE6] transition-colors"
             title="Back to Dashboard"
           >
             <ChevronLeft className="w-5 h-5" />
@@ -147,10 +147,10 @@ export const ProjectWorkspacePage: React.FC = () => {
 
           <div>
             <div className="flex items-center gap-2">
-              <h1 className="text-sm font-bold text-white tracking-tight line-clamp-1">
+              <h1 className="text-sm font-bold text-[#3E3028] tracking-tight line-clamp-1">
                 {project.name}
               </h1>
-              <span className="hidden sm:inline-block text-[10px] font-mono px-2 py-0.5 rounded bg-indigo-950/60 text-indigo-300 border border-indigo-900/40">
+              <span className="hidden sm:inline-block text-[10px] font-mono px-2 py-0.5 rounded bg-[#F5EFE6] text-[#8B6F47] border border-[#DCC9B6]">
                 Workspace
               </span>
             </div>
@@ -159,12 +159,12 @@ export const ProjectWorkspacePage: React.FC = () => {
 
         {/* Progress Pill & Mobile Menu Toggle */}
         <div className="flex items-center gap-3">
-          <div className="flex items-center gap-2 bg-slate-950 px-3 py-1.5 rounded-lg border border-slate-800">
-            <span className="text-xs font-mono text-slate-400 hidden sm:inline">Progress:</span>
-            <span className="text-xs font-bold text-indigo-400 font-mono">{progressPct}%</span>
-            <div className="w-16 h-1.5 rounded-full bg-slate-800 overflow-hidden hidden sm:block">
+          <div className="flex items-center gap-2 bg-[#F5EFE6] px-3 py-1.5 rounded-lg border border-[#E8DCCB]">
+            <span className="text-xs font-mono text-[#75675C] hidden sm:inline">Progress:</span>
+            <span className="text-xs font-bold text-[#5C4033] font-mono">{progressPct}%</span>
+            <div className="w-16 h-1.5 rounded-full bg-[#E8DCCB] overflow-hidden hidden sm:block">
               <div
-                className="h-full bg-indigo-500 rounded-full transition-all duration-500"
+                className="h-full bg-[#5C4033] rounded-full transition-all duration-500"
                 style={{ width: `${progressPct}%` }}
               />
             </div>
@@ -172,7 +172,7 @@ export const ProjectWorkspacePage: React.FC = () => {
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-1.5 text-slate-400 hover:text-white rounded-lg bg-slate-800"
+            className="lg:hidden p-1.5 text-[#75675C] hover:text-[#3E3028] rounded-lg bg-[#F5EFE6] border border-[#DCC9B6]"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -183,21 +183,21 @@ export const ProjectWorkspacePage: React.FC = () => {
       <div className="flex-1 flex max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-6 gap-8">
         {/* Left Sidebar Navigation */}
         <aside
-          className={`lg:w-64 shrink-0 fixed inset-y-0 left-0 z-50 bg-slate-900 lg:bg-transparent lg:static lg:block p-4 lg:p-0 transition-transform duration-200 ${
+          className={`lg:w-64 shrink-0 fixed inset-y-0 left-0 z-50 bg-[#F5EFE6] lg:bg-transparent lg:static lg:block p-4 lg:p-0 transition-transform duration-200 border-r border-[#E8DCCB] lg:border-r-0 ${
             mobileMenuOpen ? 'translate-x-0 w-72' : '-translate-x-full lg:translate-x-0'
           }`}
         >
           {mobileMenuOpen && (
-            <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-800 lg:hidden">
-              <span className="text-sm font-bold text-white">Workspace Menu</span>
-              <button onClick={() => setMobileMenuOpen(false)} className="text-slate-400 hover:text-white">
+            <div className="flex items-center justify-between pb-4 mb-4 border-b border-[#E8DCCB] lg:hidden">
+              <span className="text-sm font-bold text-[#3E3028]">Workspace Menu</span>
+              <button onClick={() => setMobileMenuOpen(false)} className="text-[#75675C] hover:text-[#3E3028]">
                 <X className="w-5 h-5" />
               </button>
             </div>
           )}
 
           <div className="sticky top-28 space-y-1">
-            <span className="text-[11px] font-mono uppercase tracking-wider text-slate-500 px-3 pb-2 block">
+            <span className="text-[11px] font-mono uppercase tracking-wider text-[#75675C] px-3 pb-2 block">
               Workspace Modules
             </span>
 
@@ -213,14 +213,14 @@ export const ProjectWorkspacePage: React.FC = () => {
                   }}
                   className={`w-full text-left px-3 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between group transition-all ${
                     isActive
-                      ? 'bg-indigo-600 text-white shadow-sm shadow-indigo-950'
-                      : 'text-slate-300 hover:bg-slate-800/70 hover:text-white'
+                      ? 'bg-[#5C4033] text-white shadow-sm shadow-[#5C4033]/20'
+                      : 'text-[#75675C] hover:bg-[#E8DCCB]/60 hover:text-[#3E3028]'
                   }`}
                 >
                   <div className="flex items-center gap-2.5">
                     <Icon
                       className={`w-4 h-4 transition-colors ${
-                        isActive ? 'text-white' : 'text-slate-400 group-hover:text-indigo-400'
+                        isActive ? 'text-white' : 'text-[#8B6F47] group-hover:text-[#5C4033]'
                       }`}
                     />
                     <span>{item.label}</span>
@@ -229,7 +229,7 @@ export const ProjectWorkspacePage: React.FC = () => {
                   {item.id === 'roadmap' && (
                     <span
                       className={`text-[10px] font-mono px-1.5 py-0.5 rounded ${
-                        isActive ? 'bg-indigo-800 text-indigo-100' : 'bg-slate-800 text-slate-400'
+                        isActive ? 'bg-[#4A3227] text-white' : 'bg-[#E8DCCB] text-[#5C4033]'
                       }`}
                     >
                       {project.stats?.completedSteps || 0}/{project.stats?.totalSteps || 0}
@@ -240,9 +240,9 @@ export const ProjectWorkspacePage: React.FC = () => {
             })}
 
             {/* Quick Context Card */}
-            <div className="mt-6 p-3.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-400">
-              <div className="flex items-center gap-1.5 text-indigo-300 font-semibold mb-1">
-                <Sparkles className="w-3.5 h-3.5" />
+            <div className="mt-6 p-3.5 rounded-xl bg-[#F5EFE6] border border-[#E8DCCB] text-xs text-[#75675C]">
+              <div className="flex items-center gap-1.5 text-[#5C4033] font-semibold mb-1">
+                <Sparkles className="w-3.5 h-3.5 text-[#8B6F47]" />
                 <span>AI Guidance Active</span>
               </div>
               <p className="text-[11px] leading-relaxed">

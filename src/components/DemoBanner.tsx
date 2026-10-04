@@ -16,26 +16,26 @@ export const DemoBanner: React.FC = () => {
   return (
     <div className={`text-xs py-1.5 px-4 flex items-center justify-between border-b transition-colors ${
       status.geminiConnected
-        ? 'bg-emerald-950/60 text-emerald-300 border-emerald-800/50'
-        : 'bg-amber-950/40 text-amber-300 border-amber-800/40'
+        ? 'bg-[#EBF2EB] text-[#2F4F2F] border-[#CDE0CD]'
+        : 'bg-[#F7EFE3] text-[#7A5420] border-[#EBD6BC]'
     }`}>
       <div className="flex items-center gap-2 mx-auto sm:mx-0">
         {status.geminiConnected ? (
           <>
-            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-            <span className="font-medium">Live Gemini AI Active:</span>
-            <span className="text-emerald-400/80">Real-time intelligent reasoning and plan generation connected.</span>
+            <CheckCircle2 className="w-3.5 h-3.5 text-[#3D633D] shrink-0" />
+            <span className="font-semibold">Live Gemini AI Active:</span>
+            <span className="text-[#3E5C3E]">Real-time intelligent reasoning and plan generation connected.</span>
           </>
         ) : (
           <>
-            <Info className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-            <span className="font-medium">Demo AI mode</span>
-            <span className="text-amber-400/80 hidden sm:inline">— connect Gemini API for live AI responses. All features, roadmaps, and mentors are fully functional.</span>
+            <Info className="w-3.5 h-3.5 text-[#8B6F47] shrink-0" />
+            <span className="font-semibold">Demo AI mode</span>
+            <span className="text-[#75675C] hidden sm:inline">— connect Gemini API for live AI responses. All features, roadmaps, and mentors are fully functional.</span>
           </>
         )}
       </div>
-      <div className="hidden sm:flex items-center gap-1.5 text-[11px] opacity-80">
-        <Sparkles className="w-3 h-3 text-indigo-400" />
+      <div className="hidden sm:flex items-center gap-1.5 text-[11px] text-[#75675C]">
+        <Sparkles className="w-3 h-3 text-[#8B6F47]" />
         <span>FSD Viva Ready</span>
       </div>
     </div>

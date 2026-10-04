@@ -86,22 +86,22 @@ export const DebugTab: React.FC<Props> = ({ project, currentStepTitle, onAskMent
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800">
+      <div className="p-6 rounded-2xl bg-[#F5EFE6] border border-[#E8DCCB] shadow-sm">
         <div className="flex items-center gap-2 mb-1">
-          <Bug className="w-4 h-4 text-rose-400" />
-          <span className="text-xs font-mono uppercase tracking-wider text-rose-400">
+          <Bug className="w-4 h-4 text-[#8E3E3E]" />
+          <span className="text-xs font-mono uppercase tracking-wider text-[#8E3E3E] font-semibold">
             Intelligent Root-Cause Diagnostics
           </span>
         </div>
-        <h2 className="text-xl font-bold text-white mb-2">Debugging Assistant</h2>
-        <p className="text-xs text-slate-400 leading-relaxed max-w-3xl">
+        <h2 className="text-xl font-bold text-[#3E3028] mb-2">Debugging Assistant</h2>
+        <p className="text-xs text-[#75675C] leading-relaxed max-w-3xl">
           SkillBridge doesn't just hand you mysterious code snippets. It breaks down <em>what happened</em>, <em>why it happened</em>, and <em>how to fix it</em> so you understand the underlying runtime behavior.
         </p>
       </div>
 
       {/* Quick Sample Error Chips */}
-      <div className="p-4 rounded-xl bg-slate-900 border border-slate-800">
-        <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider block mb-2">
+      <div className="p-4 rounded-xl bg-[#F5EFE6] border border-[#E8DCCB]">
+        <span className="text-[11px] font-semibold text-[#8B6F47] uppercase tracking-wider block mb-2 font-mono">
           Try a common student error scenario:
         </span>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
@@ -110,17 +110,17 @@ export const DebugTab: React.FC<Props> = ({ project, currentStepTitle, onAskMent
               key={idx}
               type="button"
               onClick={() => handleApplySample(sample)}
-              className="text-left p-2.5 rounded-lg bg-slate-950 hover:bg-slate-850 border border-slate-800 hover:border-indigo-500/40 text-xs transition-colors"
+              className="text-left p-2.5 rounded-lg bg-[#FCF9F5] hover:bg-[#E8DCCB] border border-[#DCC9B6] hover:border-[#8B6F47] text-xs transition-colors"
             >
-              <div className="font-semibold text-slate-200">{sample.label}</div>
-              <div className="text-[10px] font-mono text-slate-400 truncate mt-0.5">{sample.err}</div>
+              <div className="font-semibold text-[#3E3028]">{sample.label}</div>
+              <div className="text-[10px] font-mono text-[#75675C] truncate mt-0.5">{sample.err}</div>
             </button>
           ))}
         </div>
       </div>
 
       {error && (
-        <div className="p-4 rounded-xl bg-rose-950/50 border border-rose-800/80 text-rose-300 text-xs flex items-center gap-2">
+        <div className="p-4 rounded-xl bg-[#FAECEC] border border-[#E2B6B6] text-[#8E3E3E] text-xs flex items-center gap-2">
           <AlertCircle className="w-4 h-4 shrink-0" />
           <span>{error}</span>
         </div>
@@ -129,10 +129,10 @@ export const DebugTab: React.FC<Props> = ({ project, currentStepTitle, onAskMent
       {/* Input Form & Diagnosis Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         <div className="lg:col-span-6 space-y-4">
-          <form onSubmit={handleDiagnose} className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4">
+          <form onSubmit={handleDiagnose} className="bg-[#F5EFE6] border border-[#E8DCCB] rounded-2xl p-6 shadow-md space-y-4">
             <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                Error Message or Stack Trace <span className="text-rose-400">*</span>
+              <label className="block text-xs font-semibold text-[#3E3028] uppercase tracking-wider mb-2">
+                Error Message or Stack Trace <span className="text-[#8E3E3E]">*</span>
               </label>
               <textarea
                 required
@@ -140,12 +140,12 @@ export const DebugTab: React.FC<Props> = ({ project, currentStepTitle, onAskMent
                 value={errorMessage}
                 onChange={(e) => setErrorMessage(e.target.value)}
                 placeholder="Paste the browser console error or terminal stack trace..."
-                className="w-full px-3.5 py-2.5 bg-slate-950 border border-slate-800 rounded-lg text-xs font-mono text-white placeholder-slate-500 focus:outline-none focus:border-rose-500 transition-colors resize-none"
+                className="w-full px-3.5 py-2.5 bg-[#FCF9F5] border border-[#DCC9B6] rounded-lg text-xs font-mono text-[#3E3028] placeholder-[#75675C] focus:outline-none focus:border-[#5C4033] transition-colors resize-none"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+              <label className="block text-xs font-semibold text-[#3E3028] uppercase tracking-wider mb-2">
                 Offending Code / Problem Description (Optional)
               </label>
               <textarea
@@ -153,12 +153,12 @@ export const DebugTab: React.FC<Props> = ({ project, currentStepTitle, onAskMent
                 value={code}
                 onChange={(e) => setCode(e.target.value)}
                 placeholder="Paste the function or JSX block causing the issue..."
-                className="w-full px-3.5 py-2.5 bg-slate-950 border border-slate-800 rounded-lg text-xs font-mono text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition-colors resize-none"
+                className="w-full px-3.5 py-2.5 bg-[#FCF9F5] border border-[#DCC9B6] rounded-lg text-xs font-mono text-[#3E3028] placeholder-[#75675C] focus:outline-none focus:border-[#5C4033] transition-colors resize-none"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+              <label className="block text-xs font-semibold text-[#3E3028] uppercase tracking-wider mb-2">
                 Current Step Context
               </label>
               <input
@@ -166,14 +166,14 @@ export const DebugTab: React.FC<Props> = ({ project, currentStepTitle, onAskMent
                 value={stepContext}
                 onChange={(e) => setStepContext(e.target.value)}
                 placeholder="e.g. Step 4: REST API handler"
-                className="w-full px-3.5 py-2 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition-colors"
+                className="w-full px-3.5 py-2 bg-[#FCF9F5] border border-[#DCC9B6] rounded-lg text-xs text-[#3E3028] placeholder-[#75675C] focus:outline-none focus:border-[#5C4033] transition-colors"
               />
             </div>
 
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3 px-4 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-50 text-white font-semibold text-xs rounded-lg flex items-center justify-center gap-2 transition-all shadow-md shadow-indigo-950"
+              className="w-full py-3 px-4 bg-[#5C4033] hover:bg-[#4A3227] disabled:opacity-50 text-white font-semibold text-xs rounded-lg flex items-center justify-center gap-2 transition-all shadow-sm shadow-[#5C4033]/20"
             >
               {loading ? (
                 <>
@@ -193,24 +193,24 @@ export const DebugTab: React.FC<Props> = ({ project, currentStepTitle, onAskMent
         {/* Diagnosis Results Side */}
         <div className="lg:col-span-6">
           {loading ? (
-            <div className="h-full min-h-[380px] rounded-2xl bg-slate-900 border border-slate-800 p-8 flex flex-col items-center justify-center text-center">
-              <Loader2 className="w-10 h-10 text-rose-500 animate-spin mb-4" />
-              <h3 className="text-base font-bold text-white mb-2">Analyzing Execution Failure</h3>
-              <p className="text-xs text-slate-400 max-w-sm leading-relaxed">
+            <div className="h-full min-h-[380px] rounded-2xl bg-[#F5EFE6] border border-[#E8DCCB] p-8 flex flex-col items-center justify-center text-center">
+              <Loader2 className="w-10 h-10 text-[#5C4033] animate-spin mb-4" />
+              <h3 className="text-base font-bold text-[#3E3028] mb-2">Analyzing Execution Failure</h3>
+              <p className="text-xs text-[#75675C] max-w-sm leading-relaxed">
                 Inspecting runtime stack traces, identifying missing assertions, and drafting educational fix steps...
               </p>
             </div>
           ) : diagnosis ? (
             <div className="space-y-4">
               {/* Diagnosis Container */}
-              <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-5">
-                <div className="flex items-center justify-between pb-3 border-b border-slate-800">
-                  <span className="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+              <div className="bg-[#F5EFE6] border border-[#E8DCCB] rounded-2xl p-6 shadow-md space-y-5">
+                <div className="flex items-center justify-between pb-3 border-b border-[#E8DCCB]">
+                  <span className="text-xs font-bold text-[#3E3028] uppercase tracking-wider flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-[#43603F]" />
                     <span>Error Diagnosis Complete</span>
                   </span>
                   {isDemoMode && (
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-950/60 text-amber-300 border border-amber-800/60">
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#E8DCCB] text-[#5C4033] border border-[#DCC9B6] font-medium">
                       Demo Diagnostic
                     </span>
                   )}
@@ -218,49 +218,49 @@ export const DebugTab: React.FC<Props> = ({ project, currentStepTitle, onAskMent
 
                 {/* 1. What happened? */}
                 <div>
-                  <h4 className="text-xs font-semibold text-rose-400 uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                  <h4 className="text-xs font-semibold text-[#8E3E3E] uppercase tracking-wider mb-1 flex items-center gap-1.5">
                     <AlertCircle className="w-3.5 h-3.5" />
                     <span>What happened?</span>
                   </h4>
-                  <p className="text-xs text-slate-200 leading-relaxed bg-slate-950 p-3 rounded-lg border border-slate-800">
+                  <p className="text-xs text-[#3E3028] leading-relaxed bg-[#FCF9F5] p-3 rounded-lg border border-[#E8DCCB]">
                     {diagnosis.problem}
                   </p>
                 </div>
 
                 {/* 2. Why did it happen? */}
                 <div>
-                  <h4 className="text-xs font-semibold text-amber-400 uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                  <h4 className="text-xs font-semibold text-[#8B6F47] uppercase tracking-wider mb-1 flex items-center gap-1.5">
                     <HelpCircle className="w-3.5 h-3.5" />
                     <span>Why did it happen? (Root Cause)</span>
                   </h4>
-                  <p className="text-xs text-slate-300 leading-relaxed bg-amber-950/20 border border-amber-900/30 p-3 rounded-lg">
+                  <p className="text-xs text-[#75675C] leading-relaxed bg-[#FCF9F5] border border-[#E8DCCB] p-3 rounded-lg">
                     {diagnosis.cause}
                   </p>
                 </div>
 
                 {/* 3. How can I fix it? */}
                 <div>
-                  <h4 className="text-xs font-semibold text-emerald-400 uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                  <h4 className="text-xs font-semibold text-[#43603F] uppercase tracking-wider mb-1 flex items-center gap-1.5">
                     <Wrench className="w-3.5 h-3.5" />
                     <span>How can I fix it?</span>
                   </h4>
-                  <div className="text-xs text-slate-200 leading-relaxed bg-slate-950 p-3 rounded-lg border border-slate-800 font-mono whitespace-pre-wrap">
+                  <div className="text-xs text-[#3E3028] leading-relaxed bg-[#FCF9F5] p-3 rounded-lg border border-[#E8DCCB] font-mono whitespace-pre-wrap">
                     {diagnosis.solution}
                   </div>
                 </div>
 
                 {/* 4. What should I do next? */}
                 <div>
-                  <h4 className="text-xs font-semibold text-sky-400 uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                  <h4 className="text-xs font-semibold text-[#5C4033] uppercase tracking-wider mb-1 flex items-center gap-1.5">
                     <ArrowRight className="w-3.5 h-3.5" />
                     <span>What should I do next?</span>
                   </h4>
-                  <p className="text-xs text-slate-300 leading-relaxed bg-sky-950/20 border border-sky-900/30 p-3 rounded-lg">
+                  <p className="text-xs text-[#3E3028] leading-relaxed bg-[#E8DCCB]/40 border border-[#DCC9B6] p-3 rounded-lg">
                     {diagnosis.nextAction}
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-slate-800 flex justify-end">
+                <div className="pt-3 border-t border-[#E8DCCB] flex justify-end">
                   <button
                     type="button"
                     onClick={() =>
@@ -268,21 +268,21 @@ export const DebugTab: React.FC<Props> = ({ project, currentStepTitle, onAskMent
                         `I encountered this error: "${diagnosis.problem}". Can you explain the root cause "${diagnosis.cause}" in more depth?`
                       )
                     }
-                    className="text-xs text-indigo-400 hover:text-indigo-300 font-semibold flex items-center gap-1 hover:underline"
+                    className="text-xs text-[#5C4033] hover:text-[#8B6F47] font-semibold flex items-center gap-1 hover:underline"
                   >
-                    <Sparkles className="w-3 h-3" />
+                    <Sparkles className="w-3 h-3 text-[#8B6F47]" />
                     <span>Discuss this error with AI Mentor →</span>
                   </button>
                 </div>
               </div>
             </div>
           ) : (
-            <div className="h-full min-h-[380px] rounded-2xl bg-slate-900/40 border border-slate-800 border-dashed p-8 flex flex-col items-center justify-center text-center">
-              <div className="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-slate-400 mb-3">
+            <div className="h-full min-h-[380px] rounded-2xl bg-[#F5EFE6]/60 border border-[#DCC9B6] border-dashed p-8 flex flex-col items-center justify-center text-center">
+              <div className="w-12 h-12 rounded-xl bg-[#E8DCCB] flex items-center justify-center text-[#5C4033] mb-3">
                 <Bug className="w-6 h-6" />
               </div>
-              <h3 className="text-sm font-semibold text-slate-300 mb-1">Awaiting Error Input</h3>
-              <p className="text-xs text-slate-500 max-w-xs leading-relaxed">
+              <h3 className="text-sm font-semibold text-[#3E3028] mb-1">Awaiting Error Input</h3>
+              <p className="text-xs text-[#75675C] max-w-xs leading-relaxed">
                 Paste an error message or choose one of the sample scenarios above to inspect the diagnosis.
               </p>
             </div>

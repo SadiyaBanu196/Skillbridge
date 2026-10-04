@@ -116,24 +116,24 @@ export const CreateProjectPage: React.FC = () => {
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+        <h1 className="text-2xl sm:text-3xl font-extrabold text-[#3E3028] tracking-tight">
           Create New Project Blueprint
         </h1>
-        <p className="text-sm text-slate-400 mt-1">
+        <p className="text-sm text-[#75675C] mt-1">
           SkillBridge analyzes your project idea, recommends a structured tech stack, and drafts a step-by-step implementation roadmap.
         </p>
       </div>
 
       {error && (
-        <div className="mb-6 p-4 rounded-xl bg-rose-950/50 border border-rose-800/80 text-rose-300 text-xs flex items-center gap-2">
+        <div className="mb-6 p-4 rounded-xl bg-[#FAECEC] border border-[#E2B6B6] text-[#8E3E3E] text-xs flex items-center gap-2">
           <AlertCircle className="w-4 h-4 shrink-0" />
           <span>{error}</span>
         </div>
       )}
 
       {/* Quick Template Presets */}
-      <div className="mb-8 p-4 rounded-xl bg-slate-900 border border-slate-800">
-        <span className="text-xs font-semibold text-slate-300 uppercase tracking-wider block mb-2.5">
+      <div className="mb-8 p-4 rounded-xl bg-[#F5EFE6] border border-[#E8DCCB]">
+        <span className="text-xs font-semibold text-[#8B6F47] uppercase tracking-wider block mb-2.5">
           Need inspiration? Click a preset project idea:
         </span>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2.5">
@@ -142,12 +142,12 @@ export const CreateProjectPage: React.FC = () => {
               key={p.name}
               type="button"
               onClick={() => handleApplyPreset(p)}
-              className="text-left p-3 rounded-lg bg-slate-950/80 hover:bg-slate-800/80 border border-slate-800/80 hover:border-indigo-500/40 transition-all text-xs group"
+              className="text-left p-3 rounded-lg bg-[#FCF9F5] hover:bg-[#E8DCCB] border border-[#DCC9B6] hover:border-[#8B6F47] transition-all text-xs group"
             >
-              <div className="font-semibold text-slate-200 group-hover:text-indigo-300 transition-colors line-clamp-1">
+              <div className="font-semibold text-[#3E3028] group-hover:text-[#5C4033] transition-colors line-clamp-1">
                 {p.name}
               </div>
-              <div className="text-[11px] text-slate-400 line-clamp-2 mt-1">
+              <div className="text-[11px] text-[#75675C] line-clamp-2 mt-1">
                 {p.desc}
               </div>
             </button>
@@ -158,10 +158,10 @@ export const CreateProjectPage: React.FC = () => {
       {/* Main Form */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         <div className="lg:col-span-6 space-y-6">
-          <form onSubmit={handleGeneratePlan} className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-5">
+          <form onSubmit={handleGeneratePlan} className="bg-[#F5EFE6] border border-[#E8DCCB] rounded-2xl p-6 shadow-md space-y-5">
             <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                Project Name <span className="text-rose-400">*</span>
+              <label className="block text-xs font-semibold text-[#3E3028] uppercase tracking-wider mb-2">
+                Project Name <span className="text-[#8E3E3E]">*</span>
               </label>
               <input
                 type="text"
@@ -169,13 +169,13 @@ export const CreateProjectPage: React.FC = () => {
                 value={projectName}
                 onChange={(e) => setProjectName(e.target.value)}
                 placeholder="e.g. AI Research Assistant"
-                className="w-full px-3.5 py-2.5 bg-slate-950 border border-slate-800 rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition-colors"
+                className="w-full px-3.5 py-2.5 bg-[#FCF9F5] border border-[#DCC9B6] rounded-lg text-sm text-[#3E3028] placeholder-[#75675C] focus:outline-none focus:border-[#5C4033] transition-colors"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                Project Idea & Problem Statement <span className="text-rose-400">*</span>
+              <label className="block text-xs font-semibold text-[#3E3028] uppercase tracking-wider mb-2">
+                Project Idea & Problem Statement <span className="text-[#8E3E3E]">*</span>
               </label>
               <textarea
                 required
@@ -183,19 +183,19 @@ export const CreateProjectPage: React.FC = () => {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 placeholder="Describe what you want to build, what problem it solves, and what you want the project to do..."
-                className="w-full px-3.5 py-2.5 bg-slate-950 border border-slate-800 rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition-colors resize-none leading-relaxed"
+                className="w-full px-3.5 py-2.5 bg-[#FCF9F5] border border-[#DCC9B6] rounded-lg text-sm text-[#3E3028] placeholder-[#75675C] focus:outline-none focus:border-[#5C4033] transition-colors resize-none leading-relaxed"
               />
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                <label className="block text-xs font-semibold text-[#3E3028] uppercase tracking-wider mb-2">
                   Language / Preferred Stack
                 </label>
                 <select
                   value={language}
                   onChange={(e) => setLanguage(e.target.value)}
-                  className="w-full px-3.5 py-2.5 bg-slate-950 border border-slate-800 rounded-lg text-sm text-white focus:outline-none focus:border-indigo-500 transition-colors"
+                  className="w-full px-3.5 py-2.5 bg-[#FCF9F5] border border-[#DCC9B6] rounded-lg text-sm text-[#3E3028] focus:outline-none focus:border-[#5C4033] transition-colors"
                 >
                   <option value="TypeScript & Node.js">TypeScript & Node.js</option>
                   <option value="JavaScript / React / Express">JavaScript / React / Express</option>
@@ -205,13 +205,13 @@ export const CreateProjectPage: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                <label className="block text-xs font-semibold text-[#3E3028] uppercase tracking-wider mb-2">
                   Difficulty Level
                 </label>
                 <select
                   value={difficulty}
                   onChange={(e) => setDifficulty(e.target.value)}
-                  className="w-full px-3.5 py-2.5 bg-slate-950 border border-slate-800 rounded-lg text-sm text-white focus:outline-none focus:border-indigo-500 transition-colors"
+                  className="w-full px-3.5 py-2.5 bg-[#FCF9F5] border border-[#DCC9B6] rounded-lg text-sm text-[#3E3028] focus:outline-none focus:border-[#5C4033] transition-colors"
                 >
                   <option value="Beginner">Beginner</option>
                   <option value="Intermediate">Intermediate</option>
@@ -221,7 +221,7 @@ export const CreateProjectPage: React.FC = () => {
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+              <label className="block text-xs font-semibold text-[#3E3028] uppercase tracking-wider mb-2">
                 Additional Requirements (Optional)
               </label>
               <input
@@ -229,14 +229,14 @@ export const CreateProjectPage: React.FC = () => {
                 value={requirements}
                 onChange={(e) => setRequirements(e.target.value)}
                 placeholder="e.g. SQLite database, JWT authentication, Gemini API"
-                className="w-full px-3.5 py-2.5 bg-slate-950 border border-slate-800 rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition-colors"
+                className="w-full px-3.5 py-2.5 bg-[#FCF9F5] border border-[#DCC9B6] rounded-lg text-sm text-[#3E3028] placeholder-[#75675C] focus:outline-none focus:border-[#5C4033] transition-colors"
               />
             </div>
 
             <button
               type="submit"
               disabled={generating}
-              className="w-full py-3 px-4 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-50 text-white font-semibold text-sm rounded-lg flex items-center justify-center gap-2 transition-all shadow-md shadow-indigo-950"
+              className="w-full py-3 px-4 bg-[#5C4033] hover:bg-[#4A3227] disabled:opacity-50 text-white font-semibold text-sm rounded-lg flex items-center justify-center gap-2 transition-all shadow-md shadow-[#5C4033]/20"
             >
               {generating ? (
                 <>
@@ -256,23 +256,23 @@ export const CreateProjectPage: React.FC = () => {
         {/* Plan Preview Side */}
         <div className="lg:col-span-6">
           {generating ? (
-            <div className="h-full min-h-[420px] rounded-2xl bg-slate-900 border border-slate-800 p-8 flex flex-col items-center justify-center text-center">
-              <Loader2 className="w-10 h-10 text-indigo-500 animate-spin mb-4" />
-              <h3 className="text-base font-bold text-white mb-2">Drafting Architectural Blueprint</h3>
-              <p className="text-xs text-slate-400 max-w-sm leading-relaxed">
+            <div className="h-full min-h-[420px] rounded-2xl bg-[#F5EFE6] border border-[#E8DCCB] p-8 flex flex-col items-center justify-center text-center">
+              <Loader2 className="w-10 h-10 text-[#5C4033] animate-spin mb-4" />
+              <h3 className="text-base font-bold text-[#3E3028] mb-2">Drafting Architectural Blueprint</h3>
+              <p className="text-xs text-[#75675C] max-w-sm leading-relaxed">
                 Analyzing system requirements, decomposing modules, recommending clean tech stack components, and designing step-by-step milestones...
               </p>
             </div>
           ) : generatedPlan ? (
-            <div className="bg-slate-900 border border-indigo-500/30 rounded-2xl p-6 shadow-xl flex flex-col justify-between">
+            <div className="bg-[#F5EFE6] border border-[#DCC9B6] rounded-2xl p-6 shadow-md flex flex-col justify-between">
               <div className="space-y-5">
-                <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+                <div className="flex items-center justify-between pb-3 border-b border-[#E8DCCB]">
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-emerald-400" />
-                    <span className="text-sm font-bold text-white">Project Blueprint Generated</span>
+                    <CheckCircle2 className="w-5 h-5 text-[#43603F]" />
+                    <span className="text-sm font-bold text-[#3E3028]">Project Blueprint Generated</span>
                   </div>
                   {isDemoMode && (
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-950/60 text-amber-300 border border-amber-800/60">
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#F7EFE3] text-[#7A5420] border border-[#EBD6BC]">
                       Demo AI Blueprint
                     </span>
                   )}
@@ -280,24 +280,24 @@ export const CreateProjectPage: React.FC = () => {
 
                 {/* Problem & Solution Preview */}
                 <div>
-                  <h4 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">
+                  <h4 className="text-xs font-semibold text-[#8B6F47] uppercase tracking-wider mb-1">
                     Problem & Solution
                   </h4>
-                  <p className="text-xs text-slate-300 leading-relaxed bg-slate-950 p-3 rounded-lg border border-slate-800">
+                  <p className="text-xs text-[#3E3028] leading-relaxed bg-[#FCF9F5] p-3 rounded-lg border border-[#E8DCCB]">
                     {generatedPlan.overview.solution}
                   </p>
                 </div>
 
                 {/* Tech Stack Preview */}
                 <div>
-                  <h4 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">
+                  <h4 className="text-xs font-semibold text-[#8B6F47] uppercase tracking-wider mb-1.5">
                     Recommended Technologies ({generatedPlan.techStack.length})
                   </h4>
                   <div className="flex flex-wrap gap-1.5">
                     {generatedPlan.techStack.map((t, idx) => (
                       <span
                         key={idx}
-                        className="text-xs px-2.5 py-1 rounded-md bg-indigo-950/60 border border-indigo-800/60 text-indigo-300 font-mono"
+                        className="text-xs px-2.5 py-1 rounded-md bg-[#E8DCCB] border border-[#DCC9B6] text-[#5C4033] font-mono font-medium"
                       >
                         {t.technology} ({t.purpose})
                       </span>
@@ -307,14 +307,14 @@ export const CreateProjectPage: React.FC = () => {
 
                 {/* Phases Preview */}
                 <div>
-                  <h4 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">
+                  <h4 className="text-xs font-semibold text-[#8B6F47] uppercase tracking-wider mb-1.5">
                     Implementation Roadmap ({generatedPlan.phases.length} Phases)
                   </h4>
                   <div className="space-y-2">
                     {generatedPlan.phases.map((phase, pIdx) => (
-                      <div key={pIdx} className="p-2.5 rounded-lg bg-slate-950/60 border border-slate-800/80 text-xs">
-                        <div className="font-semibold text-slate-200">{phase.name}</div>
-                        <div className="text-[11px] text-slate-400 mt-0.5">
+                      <div key={pIdx} className="p-2.5 rounded-lg bg-[#FCF9F5] border border-[#E8DCCB] text-xs">
+                        <div className="font-semibold text-[#3E3028]">{phase.name}</div>
+                        <div className="text-[11px] text-[#75675C] mt-0.5">
                           {phase.steps.length} sequential learning steps ({phase.steps.map(s => s.title).slice(0, 2).join(', ')}...)
                         </div>
                       </div>
@@ -324,12 +324,12 @@ export const CreateProjectPage: React.FC = () => {
               </div>
 
               {/* Action */}
-              <div className="mt-6 pt-4 border-t border-slate-800">
+              <div className="mt-6 pt-4 border-t border-[#E8DCCB]">
                 <button
                   type="button"
                   onClick={handleSaveAndLaunch}
                   disabled={saving}
-                  className="w-full py-3 px-4 bg-emerald-600 hover:bg-emerald-500 disabled:opacity-50 text-white font-semibold text-sm rounded-lg flex items-center justify-center gap-2 transition-all shadow-md shadow-emerald-950"
+                  className="w-full py-3 px-4 bg-[#5C4033] hover:bg-[#4A3227] disabled:opacity-50 text-white font-semibold text-sm rounded-lg flex items-center justify-center gap-2 transition-all shadow-md shadow-[#5C4033]/20"
                 >
                   {saving ? (
                     <>
@@ -347,12 +347,12 @@ export const CreateProjectPage: React.FC = () => {
               </div>
             </div>
           ) : (
-            <div className="h-full min-h-[420px] rounded-2xl bg-slate-900/40 border border-slate-800 border-dashed p-8 flex flex-col items-center justify-center text-center">
-              <div className="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-slate-400 mb-3">
+            <div className="h-full min-h-[420px] rounded-2xl bg-[#F5EFE6]/60 border border-[#DCC9B6] border-dashed p-8 flex flex-col items-center justify-center text-center">
+              <div className="w-12 h-12 rounded-xl bg-[#E8DCCB] flex items-center justify-center text-[#5C4033] mb-3">
                 <Layers className="w-6 h-6" />
               </div>
-              <h3 className="text-sm font-semibold text-slate-300 mb-1">No Blueprint Generated Yet</h3>
-              <p className="text-xs text-slate-500 max-w-xs leading-relaxed">
+              <h3 className="text-sm font-semibold text-[#3E3028] mb-1">No Blueprint Generated Yet</h3>
+              <p className="text-xs text-[#75675C] max-w-xs leading-relaxed">
                 Fill in your project concept on the left and click "Generate Project Plan with AI" to inspect the architectural breakdown.
               </p>
             </div>

@@ -35,23 +35,23 @@ export const RoadmapTab: React.FC<Props> = ({
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="p-6 rounded-2xl bg-[#F5EFE6] border border-[#E8DCCB] flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-sm">
         <div>
-          <span className="text-xs font-mono uppercase tracking-wider text-indigo-400 block mb-1">
+          <span className="text-xs font-mono uppercase tracking-wider text-[#8B6F47] font-semibold block mb-1">
             Guided Implementation
           </span>
-          <h2 className="text-xl font-bold text-white">Project Implementation Roadmap</h2>
-          <p className="text-xs text-slate-400 mt-1">
+          <h2 className="text-xl font-bold text-[#3E3028]">Project Implementation Roadmap</h2>
+          <p className="text-xs text-[#75675C] mt-1">
             Follow structured phases designed to take you from foundational setup to production-grade deployment.
           </p>
         </div>
 
         {/* Filter buttons */}
-        <div className="flex items-center gap-1.5 p-1 bg-slate-950 rounded-lg border border-slate-800 text-xs">
+        <div className="flex items-center gap-1.5 p-1 bg-[#FCF9F5] rounded-lg border border-[#DCC9B6] text-xs">
           <button
             onClick={() => setFilter('all')}
             className={`px-3 py-1 rounded font-medium transition-colors ${
-              filter === 'all' ? 'bg-slate-800 text-white' : 'text-slate-400 hover:text-slate-200'
+              filter === 'all' ? 'bg-[#5C4033] text-white shadow-sm' : 'text-[#75675C] hover:text-[#3E3028]'
             }`}
           >
             All Steps
@@ -59,7 +59,7 @@ export const RoadmapTab: React.FC<Props> = ({
           <button
             onClick={() => setFilter('incomplete')}
             className={`px-3 py-1 rounded font-medium transition-colors ${
-              filter === 'incomplete' ? 'bg-indigo-900/60 text-indigo-200' : 'text-slate-400 hover:text-slate-200'
+              filter === 'incomplete' ? 'bg-[#E8DCCB] text-[#5C4033] font-semibold' : 'text-[#75675C] hover:text-[#3E3028]'
             }`}
           >
             To Build
@@ -67,7 +67,7 @@ export const RoadmapTab: React.FC<Props> = ({
           <button
             onClick={() => setFilter('completed')}
             className={`px-3 py-1 rounded font-medium transition-colors ${
-              filter === 'completed' ? 'bg-emerald-900/60 text-emerald-200' : 'text-slate-400 hover:text-slate-200'
+              filter === 'completed' ? 'bg-[#E7EFE6] text-[#43603F] font-semibold' : 'text-[#75675C] hover:text-[#3E3028]'
             }`}
           >
             Completed
@@ -96,32 +96,32 @@ export const RoadmapTab: React.FC<Props> = ({
           return (
             <div
               key={pIdx}
-              className="p-6 rounded-2xl bg-slate-900 border border-slate-800 transition-all"
+              className="p-6 rounded-2xl bg-[#F5EFE6] border border-[#E8DCCB] transition-all shadow-sm"
             >
               {/* Phase Header */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 mb-4 border-b border-slate-800">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 mb-4 border-b border-[#E8DCCB]">
                 <div className="flex items-center gap-3">
                   <div
                     className={`w-7 h-7 rounded-lg flex items-center justify-center font-mono text-xs font-bold ${
                       isPhaseDone
-                        ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
-                        : 'bg-indigo-500/20 text-indigo-400 border border-indigo-500/30'
+                        ? 'bg-[#E7EFE6] text-[#43603F] border border-[#CDE0CD]'
+                        : 'bg-[#E8DCCB] text-[#5C4033] border border-[#DCC9B6]'
                     }`}
                   >
                     {pIdx + 1}
                   </div>
                   <div>
-                    <h3 className="text-base font-bold text-white">{phase.name}</h3>
-                    <p className="text-xs text-slate-400">{phase.description}</p>
+                    <h3 className="text-base font-bold text-[#3E3028]">{phase.name}</h3>
+                    <p className="text-xs text-[#75675C]">{phase.description}</p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-2">
-                  <span className="text-xs font-mono text-slate-400">
+                  <span className="text-xs font-mono text-[#75675C]">
                     {completedInPhase} of {phaseSteps.length} completed
                   </span>
                   {isPhaseDone && (
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-950/60 text-emerald-300 border border-emerald-800/60 flex items-center gap-1">
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#E7EFE6] text-[#43603F] border border-[#CDE0CD] flex items-center gap-1 font-semibold">
                       <Check className="w-3 h-3" />
                       <span>Phase Complete</span>
                     </span>
@@ -141,8 +141,8 @@ export const RoadmapTab: React.FC<Props> = ({
                       onClick={() => setSelectedStep({ step, phaseName: phase.name })}
                       className={`p-4 rounded-xl border transition-all cursor-pointer flex flex-col sm:flex-row sm:items-center justify-between gap-4 group ${
                         isCompleted
-                          ? 'bg-slate-950/40 border-slate-800/60 hover:border-slate-700'
-                          : 'bg-slate-950 border-slate-800 hover:border-indigo-500/50 shadow-sm'
+                          ? 'bg-[#FCF9F5]/70 border-[#E8DCCB] hover:border-[#DCC9B6]'
+                          : 'bg-[#FCF9F5] border-[#E8DCCB] hover:border-[#8B6F47] shadow-sm'
                       }`}
                     >
                       <div className="flex items-start gap-3.5">
@@ -153,13 +153,13 @@ export const RoadmapTab: React.FC<Props> = ({
                             onToggleComplete(step.id, !isCompleted);
                           }}
                           disabled={isToggling}
-                          className="mt-0.5 text-slate-400 hover:text-emerald-400 transition-colors shrink-0"
+                          className="mt-0.5 text-[#75675C] hover:text-[#43603F] transition-colors shrink-0"
                           title={isCompleted ? 'Mark as incomplete' : 'Mark as completed'}
                         >
                           {isCompleted ? (
-                            <CheckCircle2 className="w-5 h-5 text-emerald-400 fill-emerald-950" />
+                            <CheckCircle2 className="w-5 h-5 text-[#43603F] fill-[#E7EFE6]" />
                           ) : (
-                            <Circle className="w-5 h-5 text-slate-600 hover:text-indigo-400" />
+                            <Circle className="w-5 h-5 text-[#DCC9B6] hover:text-[#5C4033]" />
                           )}
                         </button>
 
@@ -168,24 +168,24 @@ export const RoadmapTab: React.FC<Props> = ({
                             <h4
                               className={`text-sm font-semibold transition-colors ${
                                 isCompleted
-                                  ? 'text-slate-400 line-through'
-                                  : 'text-white group-hover:text-indigo-300'
+                                  ? 'text-[#75675C] line-through'
+                                  : 'text-[#3E3028] group-hover:text-[#5C4033]'
                               }`}
                             >
                               {step.title}
                             </h4>
-                            <span className="text-[10px] font-mono text-slate-400 flex items-center gap-1 bg-slate-900 px-1.5 py-0.5 rounded border border-slate-800">
+                            <span className="text-[10px] font-mono text-[#75675C] flex items-center gap-1 bg-[#E8DCCB] px-1.5 py-0.5 rounded border border-[#DCC9B6]">
                               <Clock className="w-2.5 h-2.5" />
                               <span>{step.estimatedTime || '45 mins'}</span>
                             </span>
                           </div>
 
-                          <p className="text-xs text-slate-400 line-clamp-1">
+                          <p className="text-xs text-[#75675C] line-clamp-1">
                             {step.description}
                           </p>
 
                           {step.whyNeeded && (
-                            <p className="text-[11px] text-amber-300/80 font-mono mt-1 line-clamp-1">
+                            <p className="text-[11px] text-[#8B6F47] font-mono mt-1 line-clamp-1">
                               Why: {step.whyNeeded}
                             </p>
                           )}
@@ -199,7 +199,7 @@ export const RoadmapTab: React.FC<Props> = ({
                             {step.concepts.slice(0, 2).map((c, cIdx) => (
                               <span
                                 key={cIdx}
-                                className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-400 border border-slate-800"
+                                className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#E8DCCB] text-[#5C4033] border border-[#DCC9B6]"
                               >
                                 {c}
                               </span>
@@ -207,7 +207,7 @@ export const RoadmapTab: React.FC<Props> = ({
                           </div>
                         )}
 
-                        <span className="text-xs font-semibold text-indigo-400 flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+                        <span className="text-xs font-semibold text-[#5C4033] group-hover:text-[#8B6F47] flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
                           <span>Open Step</span>
                           <ChevronRight className="w-3.5 h-3.5" />
                         </span>

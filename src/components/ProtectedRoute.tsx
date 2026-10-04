@@ -9,9 +9,9 @@ export const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ childr
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-slate-900 flex flex-col items-center justify-center p-4">
-        <Loader2 className="w-8 h-8 text-indigo-500 animate-spin mb-3" />
-        <p className="text-sm text-slate-400 font-mono">Initializing SkillBridge session...</p>
+      <div className="min-h-screen bg-[#FCF9F5] flex flex-col items-center justify-center p-4">
+        <Loader2 className="w-8 h-8 text-[#5C4033] animate-spin mb-3" />
+        <p className="text-sm text-[#75675C] font-mono">Initializing SkillBridge session...</p>
       </div>
     );
   }
