@@ -1,0 +1,6 @@
+{
+  "name": "SkillBridge - AI-Powered Project Learning Platform",
+  "description": "Learn by building real-world projects with AI-guided project planning, contextual mentoring, step-by-step roadmaps, and intelligent debugging.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
