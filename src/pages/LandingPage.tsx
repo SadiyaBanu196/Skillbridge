@@ -260,7 +260,7 @@ export const LandingPage: React.FC = () => {
       <section className="py-16 bg-[#F5EFE6] border-t border-[#E8DCCB]">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-[#3E3028] mb-4">
-            Ready to Build Your FSD Project with Complete Confidence?
+            Ready to Build Your Project with Complete Confidence?
           </h2>
           <p className="text-[#75675C] text-sm max-w-2xl mx-auto mb-8">
             Stop worrying about how to divide components, what technology to choose, or how to explain your architecture during viva evaluations. SkillBridge guides you through every step.
