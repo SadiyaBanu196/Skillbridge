@@ -6,8 +6,7 @@
 
 ## Live Demo
 
-- **Official Live Application:** [Open SkillBridge](https://skillbridge-ai-powered-project-learning-platform.ai.studio)
-- **Direct Cloud Deployment:** [Open SkillBridge (Cloud Run)](https://ais-pre-q7nuune6vkio6vf7mon47t-436417360731.asia-southeast1.run.app)
+[Open SkillBridge](https://skillbridge-ai-powered-project-learning-platform.ai.studio)
 
 ---
 
